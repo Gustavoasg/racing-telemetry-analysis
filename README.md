@@ -350,6 +350,6 @@ See `requirements.txt`. Main dependencies:
 ---
 
 ## Author
-
+Gustavo Segura with Claude Clode
 Data Science portfolio project.  
 Built with Python · pandas · matplotlib · seaborn · scipy
