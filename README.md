@@ -18,7 +18,7 @@ This project is part of a data science portfolio. It demonstrates end-to-end dat
 | Track | Rio de Janeiro circuit |
 | Laps | 5 (lap 0 = pre-race, laps 1–4 = racing laps) |
 
-> **Note:** The CSV file exceeds GitHub's 50 MB soft limit. Download it separately and place it in this folder before running the notebook.
+> **Note:** The CSV file exceeds GitHub's 50 MB soft limit. Download it separately and place it in this folder before running the notebook. At: path = kagglehub.dataset_download("alexhexan/fm7-rio-de-janeiro-race-telemetry")
 
 ### Column Groups
 
