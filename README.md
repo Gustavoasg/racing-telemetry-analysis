@@ -46,52 +46,52 @@ The notebook `01_eda.ipynb` covers 14 analysis sections:
 ### Track Map
 Reconstructed from `position_x` / `position_z` coordinates, colored by speed and annotated with braking/full-throttle zones.
 
-![Track Map](track_map.png)
+![Track Map](visualizations/eda/track_map.png)
 
 ### Lap Comparison
 Speed, throttle, and brake traces normalized to lap progress for all 4 racing laps.
 
-![Lap Comparison](lap_comparison.png)
+![Lap Comparison](visualizations/eda/lap_comparison.png)
 
 ### Engine Analysis
 RPM distribution, RPM vs. speed by gear, and power/torque curves extracted from full-throttle samples.
 
-![Engine Analysis](engine_analysis.png)
+![Engine Analysis](visualizations/eda/engine_analysis.png)
 
 ### Tire Analysis
 Temperature evolution, handling balance (understeer vs. oversteer index), and combined slip mapped onto the circuit.
 
-![Tire Analysis](tire_analysis.png)
+![Tire Analysis](visualizations/eda/tire_analysis.png)
 
 ### Driver Inputs
 Throttle/brake distributions, gear usage, steering histogram, and a throttle-vs-brake scatter (trail braking detection).
 
-![Driver Inputs](driver_inputs.png)
+![Driver Inputs](visualizations/eda/driver_inputs.png)
 
 ### G-Force Diagram
 Classic G-G diagram colored by speed, lateral G distribution, and yaw rate mapped on track.
 
-![G-Force Analysis](gforce_analysis.png)
+![G-Force Analysis](visualizations/eda/gforce_analysis.png)
 
 ### Suspension
 Travel distribution per corner and load map on the circuit.
 
-![Suspension Analysis](suspension_analysis.png)
+![Suspension Analysis](visualizations/eda/suspension_analysis.png)
 
 ### Fuel Consumption
 Fuel level over race time and consumption per lap.
 
-![Fuel Consumption](fuel_consumption.png)
+![Fuel Consumption](visualizations/eda/fuel_consumption.png)
 
 ### Speed Analysis
 Overall distribution, speed-by-gear boxplots, and percentile curve.
 
-![Speed Analysis](speed_analysis.png)
+![Speed Analysis](visualizations/eda/speed_analysis.png)
 
 ### Correlation Matrix
 Pearson correlations between 15 key variables to guide feature selection for future modeling.
 
-![Correlation Matrix](correlation_matrix.png)
+![Correlation Matrix](visualizations/eda/correlation_matrix.png)
 
 ---
 
@@ -102,27 +102,27 @@ The notebook `02_feature_engineering.ipynb` transforms the 73 raw signals into ~
 ### Track Section Classification
 Each sample labeled as STRAIGHT / BRAKING / CORNER / ACCELERATION using lateral G, throttle, and brake thresholds.
 
-![Track Sections](track_sections.png)
+![Track Sections](visualizations/feature_engineering/track_sections.png)
 
 ### Corner Detection & Cataloging
 Corners detected as local minima in the speed trace (scipy `find_peaks`). Each apex is annotated with entry speed, apex speed, exit speed, and peak lateral G.
 
-![Corner Map](corner_map.png)
+![Corner Map](visualizations/feature_engineering/corner_map.png)
 
 ### Corner Performance Across Laps
 Apex speed and peak lateral G compared corner-by-corner across all 4 laps.
 
-![Corner Performance](corner_performance.png)
+![Corner Performance](visualizations/feature_engineering/corner_performance.png)
 
 ### Delta Time vs Best Lap
 At every track position, each lap is compared against the best lap (Lap 4) to show where time is gained or lost.
 
-![Delta Time](delta_time.png)
+![Delta Time](visualizations/feature_engineering/delta_time.png)
 
 ### Lap Performance Radar
 Normalized comparison of 6 key metrics across laps.
 
-![Lap Radar](lap_radar.png)
+![Lap Radar](visualizations/feature_engineering/lap_radar.png)
 
 ### Engineered Feature Groups
 
@@ -279,7 +279,7 @@ Predicts which track section type (`STRAIGHT` / `BRAKING` / `CORNER` / `ACCELERA
 | Random Forest | — | — |
 | **XGBoost** | — | — |
 
-![Classifier](model_classifier.png)
+![Classifier](visualizations/modeling/model_classifier.png)
 
 ### Problem 2 — Delta Time Regressor
 
@@ -292,13 +292,13 @@ Predicts `delta_time_s` — how many seconds behind the best lap the car is at e
 | Random Forest | — | — | — |
 | **XGBoost** | — | — | — |
 
-![Regressor](model_regressor.png)
+![Regressor](visualizations/modeling/model_regressor.png)
 
 ### Problem 3 — Corner Difficulty Clustering
 
 Groups the circuit's corners into **Easy / Medium / Hard** tiers using KMeans on apex speed, lateral G, and speed loss. Optimal k selected via elbow + silhouette score.
 
-![Clustering](model_clustering.png)
+![Clustering](visualizations/modeling/model_clustering.png)
 
 ### Saved artifacts
 
